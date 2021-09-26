@@ -1,0 +1,195 @@
+<a class="whatsapp-link .fa-whatsapp" href="https://chat.whatsapp.com/BlhOyHEoAYm9m87DYgaqI9" target="_blank">
+    <i class="fa fa-whatsapp"></i>
+</a>
+
+<div>
+    <div class="container-fluid">
+
+        <div class="row bg-img d-flex justify-content-center align-items-center">
+            <div class="col-md-12">
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 text-white mtBV mb-4">
+                        <h1 class="fs-50">Seja bem vinde ao <br> Laços da Comunidade!</h1>
+                        <h5 class="fs-20">Cadastre seu evento para mudar a sociedade!!</h5>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center mb-5 lado">
+                    <div class="col-md-6 lado ">
+                        <button class="btn botao3 mr-2 mt-negativo" data-toggle="modal" data-target="#novaPostagem">Novo
+                            Evento</button>
+                        <a class="btn botao3 mr-5 mt-negativo " href="#postagens">Ver Eventos</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid mb-g mt-3 colorBG" id="postagens">
+
+        <nav>
+            <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+
+                <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
+                    data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
+                    aria-selected="true">Todos eventos</a>
+
+                <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
+                    id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
+                    aria-controls="nav-minhasPostagens" aria-selected="false">Meus eventos</a>
+
+                <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
+                    href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Eventos por
+                    tema</a>
+
+            </div>
+        </nav>
+
+
+
+
+        <div class="tab-content mt-5 row-wrap" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+                aria-labelledby="nav-todasPostagens-tab">
+
+                <div class="row d-flex justify-content-center mt-5 mb-5">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class=" com form-control" id="titulo"
+                                placeholder="Digite um titulo de evento para pesquisar" [(ngModel)]='tituloPost'
+                                (keyup)='findByTituloPostagem()'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-columns">
+                    <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+                        <div class="card-body cardBG">
+                            <h5 class="card-title m-0">{{item.titulo}}</h5>
+                            <p class="font-weight-bold"> Tema: {{item.tema.descricao}}</p>
+                            <p class="card-text mt-3">{{item.texto}}</p>
+                            <p class="card-text">
+                                <small class="color1">
+                                    {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                                </small>
+                            </p>
+
+                            <p class="card-text font-weight-bold">
+                                Postagem realizada pelo usuário(a):<br> {{item.usuario.nome}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+
+                <div class="card-columns">
+                    <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                        <div class="card-body cardBG">
+                            <h5 class="card-title m-0">{{item.titulo}}</h5>
+                            <p class="font-weight-bold"> Tema: {{item.tema.descricao}}</p>
+                            <p class="card-text mt-3">{{item.texto}}</p>
+                            <p class="card-text color1">
+                                <small class="color1">
+                                    {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                                </small>
+                            </p>
+
+
+                            <a [routerLink]="['/postagem-edit', item.id]" class="text-white mr-3 font-weight-bold" href="">Editar</a>
+                            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger font-weight-bold" href="">Apagar</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
+
+                <div class="row d-flex justify-content-center mt-5 mb-5">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="com form-control" id="titulo"
+                                placeholder="Digite um tema para pesquisar" [(ngModel)]='nomeTema'
+                                (keyup)='findByNomeTema()'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-columns" *ngFor='let tema of listaTemas'>
+                    <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+                        <div class="card-body cardBG">
+                            <h5 class="card-title m-0">{{item.titulo}}</h5>
+                            <p class="card-text mt-3">{{item.texto}}</p>
+                            <p class="card-text color1 ">
+                                <small class="color1">
+                                    {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                                </small>
+                            </p>
+
+                            <p class="card-text font-weight-bold">
+                                Postagem realizada pelo usuário(a):<br> {{item.usuario.nome}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal-->
+    <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header nvPost">
+                    <h5 class="modal-title d-flex justify-content-center" id="TituloModalCentralizado">Novo Evento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mBody">
+
+
+                    <div class="form-group">
+                        <label for="titulo">Título do evento</label>
+                        <input [(ngModel)]='postagem.titulo' type="text" class="form-control slct" id="titulo"
+                            placeholder="Digite o título">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="texto">Texto <i class="fa fa-comment-o" aria-hidden="true"></i></label>
+                        <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tema">Escolha um tema ou <a data-dismiss="modal"
+                                routerLink="/cadastrar-evento">cadastre um
+                                novo</a>: <i class="fa fa-folder-open-o" aria-hidden="true"></i></label>
+                        <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema'
+                            (change)='findByIdTema()'>
+                            <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                                {{item.descricao}}
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class=" d-flex justify-content-center modal-footer nvPost1">
+                    <button type="button" class="btn botao1 botao2 btnCancel " data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn botao1 botao2 btnCad " (click)='publicar()'
+                        data-dismiss="modal">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

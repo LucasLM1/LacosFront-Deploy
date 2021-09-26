@@ -1,0 +1,33 @@
+<div class ="colorBG">
+    <div class="container ">
+
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <h1 class="text-center ">Apagar tema de evento</h1>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <h4 class="text-center ">Você tem certeza que deseja apagar esse tema de evento? Todas as postagens
+                    relacionadas a ele serão igualmente apagadas.</h4>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h5 class="text-center text-primary">Tema: {{tema.descricao}}</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class=" mt-negativo col-md-12 d-flex justify-content-center">
+                <button class="btn btnCancel mr-4" routerLink='/cadastrar-evento'>Não</button>
+                <button class="btn btnCad " (click)='apagar()'>Sim</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

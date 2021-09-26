@@ -1,0 +1,346 @@
+.whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 39px;
+    right: 39px;
+    background-color: #25d366 ;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+
+.fa-whatsapp {
+    margin-top: 16px;
+}
+
+div{
+    font-family: sans-serif;
+}
+.logoNome{
+    margin-left: -40px;
+}
+
+.alBotao{
+    margin-left: 100px;
+}
+
+
+.imgHome{
+    background-image: url(../../assets/img/lacos_home_4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-content:center;
+    align-items: center;
+    height: 79vh;
+}
+
+nav{
+    background-color: rgb(010, 182, 218);
+    height: 70px;
+}
+
+.nvShadow{
+    box-shadow: 0px, 2px, 4px rgb(0, 0, 0/ 28%);
+}
+
+.fs-16{
+    font-size: 15pt;
+    padding: 20px;
+}
+
+a{
+    cursor: pointer;
+}
+
+button{
+    background-color: rgb(242, 005, 197);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    
+}
+
+.btn:hover{
+    background-color: rgb(252, 47, 218);
+    transition: .55s ease-in-out;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.imgBG{
+    background-color: #000;
+
+}
+
+
+/* CARDS */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root {
+    --accent-color: #D80032;
+    --dark-color: #161616;
+}
+
+:root {
+    --body-font: 'Open Sans';
+    --h1-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --h1-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    /* border-radius: 50%;
+    border: 2.5px solid rgb(214, 223, 90); */
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-- LAYOUT --*/
+
+
+
+hr{
+    border-color: yellow; 
+}
+
+.fonte1{
+
+font-family:Sans Serif;
+font-size: 35px;
+
+}
+.fonte2{
+
+font-family:Sans Serif;
+font-size: 35px;
+
+}
+
+.main {
+    padding: 2rem 0;
+}
+
+.bd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 1200px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*-- COMPONENT --*/
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 300px;
+    max-height: 400px;
+    margin-left: 100px;
+}
+article:nth-child(1) {
+    background-color: rgb(242, 005, 197);
+}
+
+article:nth-child(2) {
+    background-color: rgb(242, 005, 197);
+}
+
+article:nth-child(3) {
+    background-color: rgb(242, 005, 197);
+}
+
+article:nth-child(4) {
+    background-color: rgb(242, 005, 197);
+}
+article:nth-child(5) {
+    background-color: rgb(242, 005, 197);
+}
+article:nth-child(6) {
+    background-color: rgb(242, 005, 197);
+    /* background-image: linear-gradient(rgb(242, 005, 197),  rgb(010, 182, 218)); */
+}
+article:nth-child(7) {
+    /* background-image: linear-gradient(rgb(242, 005, 197),  rgb(010, 182, 218)); */
+    background-color: rgb(242, 005, 197);
+}
+
+.card__img {
+    width: 180px;
+    height: auto;
+    padding: 3rem 0;
+    transition: .5s;
+    
+}
+
+
+.card__icon {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+    max-height: 15px;
+}
+
+.card__icon:hover {
+    color: #075ddd;
+}
+
+.card__precis {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+}
+
+.card__preci {
+    top: -5px;
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+
+.card__preci--now {
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+}
+
+.card:hover{
+    background-image: linear-gradient(rgb(255, 1, 208),  rgb(32, 199, 233));
+    box-shadow: 0 .5rem 1rem #1058cc;
+    transition: .45s ease-in-out;
+}
+
+
+
+.bcdColor{
+    background-image:linear-gradient( rgb(219, 210, 87), rgb(255, 255, 255));
+    margin-top: -55px;
+}
+
+/* .time{
+    left:60%;
+} */
+
+@media screen and (min-width: 1200px) {
+    body {
+        margin: 3rem 0 0 0;
+    }
+
+    .title-shop {
+        margin: 0 5rem;
+    }
+
+    .bd-grid {
+        margin-left: auto;
+        /* margin-right: auto; */
+    }
+}
+
+/* JUMBOTROM */
+
+.jumboColor{
+    background-image:linear-gradient(rgb(255, 255, 255),  rgb(219, 210, 87));
+}
+
+.space{
+    margin-top: -55px;
+    margin-bottom: -20px;
+}
+
+/* TEXTO COM VIDEO */
+.bcdTxt{
+    background-color: rgb(219, 210, 87);
+    margin-top: -65px
+}
+
+
+/* PROGRESSO */
+
+
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(010, 182, 218);
+}
+h4{
+color: rgb(255, 255, 255);
+}
+
+
+ul.social-network{
+    list-style: none;
+    padding: o;
+}
+/*Organização redes sociais uma do lado da outra e mesmo tamanho*/
+ul.social-network li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+
+/*Mudar a cor ao clicar no icone (não esquecer do houver) */
+/*Organização redes sociais face classe fa da cor  */
+.fa-facebook-square {
+    font-size: 35pt;
+    padding: 10px;
+    color: rgb(0, 30, 128);
+}
+/*Organização redes sociais insta classe fa da cor */
+.fa-instagram{
+    font-size: 35pt;
+    padding: 10px;
+    color: #c13584;
+}
+/*Organização redes sociais linkedin classe fa da cor  */
+.LKD{
+    font-size: 35pt;
+    padding: 10px;
+    color: #0170ac;
+} 
+
+.linkGen{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+
+.linkGen:hover{
+    color:yellow;
+}
+
+
